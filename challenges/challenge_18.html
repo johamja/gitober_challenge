@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generador de Nombres de Monstruos</title>
+</head>
+<body>
+  <h1>Generador de Nombres de Monstruos</h1>
+  <p id="monsterName">Haz clic en el botón para generar un nombre de monstruo</p>
+  <button onclick="generateMonsterName()">Generar Nombre</button>
+
+<script>
+  const prefixes = ["Drako", "Morto", "Fango", "Siniestro", "Escarabajo", "Brujo", "Luna", "Veneno", "Garra", "Sombras"];
+  const middles = ["gore", "críptico", "espanta", "terror", "oscuro", "noche", "calabaza", "grim", "espectro", "bruma"];
+  const suffixes = ["stein", "lock", "blade", "fang", "geist", "hound", "shadow", "screech", "ghoul", "fiend"];
+
+  function generateMonsterName() {
+    const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+    const middle = middles[Math.floor(Math.random() * middles.length)];
+    const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+
+    const monsterName = `${prefix}${middle}${suffix}`;
+    document.getElementById("monsterName").textContent = monsterName;
+  }
+</script>
+</body>
+</html>
